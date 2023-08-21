@@ -1,1 +1,106 @@
-Hello Impossible
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Impossible Games</title>
+    <style>
+        body {
+            background-color: #000;
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .counter {
+            font-size: 3em;
+            color: #ff0000;
+            margin: 20px;
+            padding: 10px;
+            /* border: 2px solid #ff0000; */
+            /* border-radius: 10px; */
+            /* box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); */
+            flex: 1;
+            /* Distribuye igualmente el espacio verticalmente */
+        }
+
+        @media (max-width: 768px) {
+
+            /* Estilos para pantallas más pequeñas, por ejemplo, dispositivos móviles */
+            .counter {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="counter">
+            <span id="counter1">0</span>
+        </div>
+        <div class="counter">
+            <span id="counter2">0</span>
+        </div>
+        <div class="counter">
+            <span id="counter3">0</span>
+        </div>
+    </div>
+    <script>
+        function updateCounter(element, startDate) {
+            const counterElement = document.getElementById(element);
+            let interval; // Declara la variable interval aquí
+
+            function update() {
+                const currentDate = new Date().getTime();
+                const timeRemaining = startDate - currentDate;
+
+                if (timeRemaining > 0) {
+                    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+                    // Formatea la salida en el elemento de contador
+                    counterElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+                } else {
+                    counterElement.textContent = '0d 0h 0m 0s';
+                    counterElement.style.textDecoration = 'line-through';
+                    counterElement.style.color = '#444'
+                    clearInterval(interval); // Detiene la actualización cuando la cuenta regresiva ha finalizado
+                }
+            }
+
+            // Llama a la función de actualización inicialmente y luego cada segundo
+            update();
+            interval = setInterval(update, 1000); // Asigna el valor de interval aquí
+        }
+
+        // Define las fechas de inicio para los tres contadores (ajusta las fechas según sea necesario)
+        const startDate1 = new Date('2023-01-31T00:00:00').getTime();
+        const startDate2 = new Date('2023-08-31T18:00:00').getTime();
+        const startDate3 = new Date('2023-09-08T18:00:00').getTime();
+
+        // Llama a la función de actualización para cada contador
+        updateCounter('counter1', startDate1);
+        updateCounter('counter2', startDate2);
+        updateCounter('counter3', startDate3);
+
+    </script>
+</body>
+
+</html>
