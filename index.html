@@ -15,9 +15,23 @@
 </head>
 
 <body>
-     <div class="container">
+    <header class="container align-items-end my-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="text-right">
+                    <section class="icon-list">            
+                        <i class="nes-icon is-medium is-transparent heart"></i> 
+                        <i class="nes-icon is-medium is-half heart"></i>
+                        <i class="nes-icon is-medium heart"></i>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="container">
         <div class="counter">
-            <p class="nes-text" id="counter1">0</p>
+            <p class="nes-text" id="counter1">0 </p>
         </div>
         <div class="counter">
             <p class="nes-text" id="counter2">0</p>
@@ -25,14 +39,12 @@
         <div class="counter">
             <p class="nes-text" id="counter3">0</p>
         </div>
-    </div>
-    <footer class="container mt-5">
-        <address class="text-white">>> Impossible Games << </address>
-        <section class="icon-list">
-            <!-- heart -->
-            <i class="nes-icon is-medium heart"></i>
-        </section>
+    </section>
+
+    <footer class="container my-5">
+        <address class="text-white">>>Impossible Games<<</address>
     </footer>
+
     <script>
         function updateCounter(element, startDate) {
             const counterElement = document.getElementById(element);
