@@ -20,9 +20,9 @@
             <div class="col-12">
                 <div class="text-right">
                     <section class="icon-list">            
-                        <i class="nes-icon is-medium is-transparent heart"></i> 
-                        <i class="nes-icon is-medium heart"></i>
-                        <i class="nes-icon is-medium heart"></i>
+                        <i class="nes-icon is-medium heart" id="heart-1"></i> 
+                        <i class="nes-icon is-medium heart" id="heart-2"></i>
+                        <i class="nes-icon is-medium heart" id="heart-3"></i>
                     </section>
                 </div>
             </div>
@@ -46,8 +46,9 @@
     </footer>
 
     <script>
-        function updateCounter(element, startDate) {
+        function updateCounter(element, heartId, startDate) {
             const counterElement = document.getElementById(element);
+            const heartElement = document.getElementById(heartId);
             let interval; // Declara la variable interval aquí
 
             function update() {
@@ -65,7 +66,8 @@
                 } else {
                     counterElement.textContent = '0d 0h 0m 0s';
                     counterElement.style.textDecoration = 'line-through';
-                    counterElement.style.color = '#444'
+                    counterElement.style.color = '#444';
+                    heartElement.classList.add('is-transparent');
                     clearInterval(interval); // Detiene la actualización cuando la cuenta regresiva ha finalizado
                 }
             }
@@ -77,13 +79,13 @@
 
         // Define las fechas de inicio para los tres contadores (ajusta las fechas según sea necesario)
         const startDate1 = new Date('2023-01-31T00:00:00').getTime();
-        const startDate2 = new Date('2023-08-31T18:00:00').getTime();
-        const startDate3 = new Date('2023-08-25T18:00:00').getTime();
+        const startDate2 = new Date('2023-08-25T18:00:00').getTime();
+        const startDate3 = new Date('2023-08-31T18:00:00').getTime();
 
         // Llama a la función de actualización para cada contador
-        updateCounter('counter1', startDate1);
-        updateCounter('counter2', startDate2);
-        updateCounter('counter3', startDate3);
+        updateCounter('counter1', 'heart-1', startDate1);
+        updateCounter('counter2', 'heart-2', startDate2);
+        updateCounter('counter3', 'heart-3', startDate3);
 
     </script>
 </body>
