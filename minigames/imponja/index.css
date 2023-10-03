@@ -244,16 +244,16 @@ button:active::before {
 }
 
 .credits {
-    font-size: 5px;
+    font-size: 12px;
     position: fixed;
     width: 100%;
     right: 0;
-    color: #131314;
+    /* color: #131314; */
     bottom: 20px;
 }
 .credits a {
-    color: #131314;
-    text-decoration: none;
+    color: white
+    /* text-decoration: none; */
 }
 
 a {
