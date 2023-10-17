@@ -46,6 +46,8 @@ q {
     background: url(../img/guille.jpeg) center top no-repeat; }
   .card-perfil.cio {
     background: url(../img/foto-abel-2.jpg) center center no-repeat; }
+  .card-perfil.clo {
+      background: url(../img/Lucas.jpeg) center center no-repeat; }
 
 .counter {
   font-size: 2em;
