@@ -112,6 +112,11 @@ button.clearfix {
   align-items: center;
   background-color: #000; }
 
+.trans-show {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.5s, transform 1s; }
+
 @keyframes animate {
   0% {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7), 0 0 0 0 rgba(0, 0, 0, 0.7); }

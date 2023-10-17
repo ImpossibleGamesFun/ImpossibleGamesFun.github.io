@@ -121,21 +121,23 @@ q {
     transform: translateX(0px);
     transition: .5s ease;
 }
-button{
-    &.clearfix{
+
+button {
+    &.clearfix {
         border: none;
         background-color: transparent;
-    }    
+    }
 }
 
-.container-pulse{
+.container-pulse {
     position: absolute;
     bottom: 0px;
     right: 10px;
-    .pulse {        
-        width:50px;
-        height:50px;
-        background: #fff;        
+
+    .pulse {
+        width: 50px;
+        height: 50px;
+        background: #fff;
         color: #fff;
         display: flex;
         justify-content: center;
@@ -145,7 +147,8 @@ button{
         animation: animate 2500ms linear infinite;
     }
 }
-.placeholder-game{
+
+.placeholder-game {
 
     width: 40px;
     height: 40px;
@@ -156,18 +159,27 @@ button{
 
 }
 
+.trans-show {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.5s, transform 1s;
+}
+
 @keyframes animate {
     0% {
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7),0 0 0 0 rgba(0, 0, 0, 0.7);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7), 0 0 0 0 rgba(0, 0, 0, 0.7);
     }
+
     40% {
-        box-shadow: 0 0 0 50px rgba(255,109,74,0),0 0 0 0 rgba(58, 55, 55, 0.7);
+        box-shadow: 0 0 0 50px rgba(255, 109, 74, 0), 0 0 0 0 rgba(58, 55, 55, 0.7);
     }
+
     80% {
-        box-shadow: 0 0 0 50px rgba(255,109,74,0),0 0 0 30px rgba(255,109,74,0);
+        box-shadow: 0 0 0 50px rgba(255, 109, 74, 0), 0 0 0 30px rgba(255, 109, 74, 0);
     }
+
     100% {
-        box-shadow: 0 0 0 0 rgba(255,109,74,0),0 0 0 30px rgba(255,109,74,0);
+        box-shadow: 0 0 0 0 rgba(255, 109, 74, 0), 0 0 0 30px rgba(255, 109, 74, 0);
     }
 }
 
