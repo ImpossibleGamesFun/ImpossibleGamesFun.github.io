@@ -47,7 +47,9 @@ q {
   .card-perfil.cio {
     background: url(../img/foto-abel-2.jpg) center center no-repeat; }
   .card-perfil.clo {
-      background: url(../img/Lucas.jpeg) center center no-repeat; }
+    background: url(../img/Lucas.jpeg) center center no-repeat; }
+  .card-perfil.cpo {
+    background: url(../img/paz.jpeg) center center no-repeat; }
 
 .counter {
   font-size: 2em;
