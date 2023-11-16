@@ -50,6 +50,8 @@ q {
     background: url(../img/Lucas.jpeg) center center no-repeat; }
   .card-perfil.cpo {
     background: url(../img/paz.jpeg) center center no-repeat; }
+  .card-perfil.hugo {
+    background: url(../img/hugo.jpg) center center no-repeat; }
 
 .counter {
   font-size: 2em;
